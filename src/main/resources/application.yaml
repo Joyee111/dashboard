@@ -1,0 +1,25 @@
+server:
+  port: 48080
+
+--- #################### 数据库相关配置 ####################
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+    username: root
+    password: 123456
+  application:
+    name: dashboard
+#
+#  profiles:
+#    active: local
+
+  main:
+    allow-circular-references: true # 允许循环依赖，因为项目是三层架构，无法避免这个情况。
+
+  # Servlet 配置
+  servlet:
+    # 文件上传相关配置项
+    multipart:
+      max-file-size: 16MB # 单个文件大小
+      max-request-size: 32MB # 设置总上传的文件大小
